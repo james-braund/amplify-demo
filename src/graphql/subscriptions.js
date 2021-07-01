@@ -122,6 +122,10 @@ export const onCreatePost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -173,6 +177,10 @@ export const onUpdatePost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -224,6 +232,10 @@ export const onDeletePost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -384,6 +396,21 @@ export const onCreateAuthor = /* GraphQL */ `
     onCreateAuthor {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
@@ -397,6 +424,21 @@ export const onUpdateAuthor = /* GraphQL */ `
     onUpdateAuthor {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
@@ -410,6 +452,21 @@ export const onDeleteAuthor = /* GraphQL */ `
     onDeleteAuthor {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt

@@ -27,4 +27,5 @@ type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
 type Author @model {
   id: ID!
   name: String!
+  posts: [Post] @connection(keyName: "byAuthor", fields: ["id"])
 }

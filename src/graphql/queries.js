@@ -173,6 +173,10 @@ export const getPost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -367,6 +371,10 @@ export const syncAuthors = /* GraphQL */ `
       items {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -383,6 +391,21 @@ export const getAuthor = /* GraphQL */ `
     getAuthor(id: $id) {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
@@ -401,6 +424,10 @@ export const listAuthors = /* GraphQL */ `
       items {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt

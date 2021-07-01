@@ -17,7 +17,6 @@ export declare class Post {
   readonly title: string;
   readonly blog?: Blog;
   readonly comments?: (Comment | null)[];
-  readonly authorID?: string;
   readonly author?: Author;
   constructor(init: ModelInit<Post>);
   static copyOf(source: Post, mutator: (draft: MutableModel<Post>) => MutableModel<Post> | void): Post;
@@ -34,6 +33,7 @@ export declare class Comment {
 export declare class Author {
   readonly id: string;
   readonly name: string;
+  readonly posts?: (Post | null)[];
   constructor(init: ModelInit<Author>);
   static copyOf(source: Author, mutator: (draft: MutableModel<Author>) => MutableModel<Author> | void): Author;
 }

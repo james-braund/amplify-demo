@@ -20,7 +20,15 @@ function App() {
   const makeTitle = () => `I did a post called ${randString()}`
 
   const makeAuthor = async () => {
-    return await DataStore.save(new Author({ name: `Jo ${randString()}`}));
+    let [author] = await DataStore.query(Author);
+    if (!author) {
+      console.log("No Author item found, creating one");
+      author = await DataStore.save(new Author({ name: `Jo ${randString()}`}));
+    }
+    console.log("Returning author")
+    console.log(author);
+
+    return author;
   }
 
   const getBlog = async () => {

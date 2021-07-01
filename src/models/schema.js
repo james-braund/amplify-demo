@@ -85,13 +85,6 @@ export const schema = {
                         "associatedWith": "post"
                     }
                 },
-                "authorID": {
-                    "name": "authorID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "author": {
                     "name": "author",
                     "isArray": false,
@@ -101,8 +94,7 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
+                        "connectionType": "BELONGS_TO",
                         "targetName": "authorID"
                     }
                 }
@@ -200,6 +192,20 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
+                },
+                "posts": {
+                    "name": "posts",
+                    "isArray": true,
+                    "type": {
+                        "model": "Post"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "author"
+                    }
                 }
             },
             "syncable": true,
@@ -214,5 +220,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "68a3a2222b4ba9b0808f2efede9a4748"
+    "version": "3bb8632ab470cbc51f6f578c35ac0682"
 };

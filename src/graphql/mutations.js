@@ -134,6 +134,10 @@ export const createPost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -188,6 +192,10 @@ export const updatePost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -242,6 +250,10 @@ export const deletePost = /* GraphQL */ `
       author {
         id
         name
+        posts {
+          nextToken
+          startedAt
+        }
         _version
         _deleted
         _lastChangedAt
@@ -414,6 +426,21 @@ export const createAuthor = /* GraphQL */ `
     createAuthor(input: $input, condition: $condition) {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
@@ -430,6 +457,21 @@ export const updateAuthor = /* GraphQL */ `
     updateAuthor(input: $input, condition: $condition) {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
@@ -446,6 +488,21 @@ export const deleteAuthor = /* GraphQL */ `
     deleteAuthor(input: $input, condition: $condition) {
       id
       name
+      posts {
+        items {
+          id
+          title
+          blogID
+          authorID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
       _version
       _deleted
       _lastChangedAt
